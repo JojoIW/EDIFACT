@@ -100,6 +100,24 @@
 			<ContactName>MR. SMITH</ContactName> 
 		</ContactDetails> 
 	</CTA>
+	<COM>
+		<CommunicationContact> 
+			<CommunicationAddressIdentifier>00492081111111</CommunicationAddressIdentifier> 
+			<CommunicationAddressCodeQualifier>TE</CommunicationAddressCodeQualifier> 
+		</CommunicationContact> 
+	</COM>
+	<COM>
+		<CommunicationContact> 
+			<CommunicationAddressIdentifier>00492082222222</CommunicationAddressIdentifier> 
+			<CommunicationAddressCodeQualifier>FX</CommunicationAddressCodeQualifier> 
+		</CommunicationContact> 
+	</COM>
+	<COM>
+		<CommunicationContact> 
+			<CommunicationAddressIdentifier>CONTACT@ALDI-SUED.COM</CommunicationAddressIdentifier> 
+			<CommunicationAddressCodeQualifier>FX</CommunicationAddressCodeQualifier> 
+		</CommunicationContact> 
+	</COM>
 	<NAD>
 		<PartyFunctionCodeQualifier>SU</PartyFunctionCodeQualifier> 
 		<PartyIdentificationDetails> 
@@ -151,10 +169,72 @@
 		<PostalIDCode>46045</PostalIDCode> 
 		<CountryNameCode>DE</CountryNameCode> 
 	</NAD>
+	<LIN>
+		<LineItemIdentifier>1</LineItemIdentifier> 
+	</LIN>
+	<PIA>
+		<ProductIdentifier>5</ProductIdentifier> 
+		<ItemNumberID> 
+			<ItemID>12345</ItemID> 
+			<ItemTypeIDCode>IN</ItemTypeIDCode> 
+			<CodeListIDCode></CodeListIDCode> 
+			<ResponsibleAgencyCode>92</ResponsibleAgencyCode> 
+		</ItemNumberID> 
+	</PIA>
+	<PIA>
+		<ProductIdentifier>1</ProductIdentifier> 
+		<ItemNumberID> 
+			<ItemID>DE-54321</ItemID> 
+			<ItemTypeIDCode>XY8</ItemTypeIDCode> 
+			<CodeListIDCode></CodeListIDCode> 
+			<ResponsibleAgencyCode>92</ResponsibleAgencyCode> 
+		</ItemNumberID> 
+	</PIA>
+	<IMD>
+		<DescriptionFormatCode>F</DescriptionFormatCode> 
+		<ItemCharacteristic></ItemCharacteristic> 
+		<ItemDescriptionTL> 
+			<ItemDescriptionCode></ItemDescriptionCode> 
+			<CodeListIDCode></CodeListIDCode> 
+			<ResponsibleAgencyCode></ResponsibleAgencyCode> 
+			<ItemDescription>MUESLI</ItemDescription> 
+		</ItemDescriptionTL> 
+	</IMD>
+	<QTY>
+		<QuantityDetails> 
+			<QuantityTypeCodeQualifier>21</QuantityTypeCodeQualifier> 
+			<Quantity>48</Quantity> 
+			<MeasurementUnitCode>200</MeasurementUnitCode> 
+		</QuantityDetails> 
+	</QTY>
+	<QTY>
+		<QuantityDetails> 
+			<QuantityTypeCodeQualifier>45E</QuantityTypeCodeQualifier> 
+			<Quantity>5760</Quantity> 
+			<MeasurementUnitCode>CS</MeasurementUnitCode> 
+		</QuantityDetails> 
+	</QTY>
 	<FTX>
 		<TextSubjectCodeQualifier>PKG</TextSubjectCodeQualifier> 
 		<FreeTextFunctionCode></FreeTextFunctionCode> 
 		<TextReference></TextReference> 
 		<TextLiteral>Europalette</TextLiteral> 
 	</FTX>
+	<UNS>
+		<SectionID>S</SectionID> 
+	</UNS>
+	<CNT>
+		<Control> 
+			<ControlTotalTypeCodeQualifier>16</ControlTotalTypeCodeQualifier> 
+			<ControlTotalValue>48</ControlTotalValue> 
+		</Control> 
+	</CNT>
+	<UNT>
+		<NumberofSegments>26</NumberofSegments> 
+		<MessageReferenceNumber>54322</MessageReferenceNumber> 
+	</UNT>
+	<UNZ>
+		<InterchangeControlCount>1</InterchangeControlCount> 
+		<InterchangeControlReference>1234555</InterchangeControlReference> 
+	</UNZ>
 </ORDER>

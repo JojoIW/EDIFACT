@@ -8,15 +8,8 @@
 def doUNA(line,output_file):
 # This line just shows the delimeters used in the EDIFACT File. We don't really need this in 
 # the XML file, so do nothing for now
-	
-	print ("***************************************************************************************************************************************")
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
-	print(" ")
 	return;
-
-
-
+#
 def doUNB(line,output_file):
 #
 # This is the Message Interchange Header segment.
@@ -421,12 +414,12 @@ def doCTA(line,output_file):
 	split_list = line.split("+")
 	segment_identifier				= split_list[0]
 	contact_function_code 			= split_list[1]
-
+#
 	contact_details					= split_list[2]
 	split_sub						= contact_details.split(":")
 	contact_name_code				= split_sub[0]
 	contact_name 					= split_sub[1]
-	
+#	
 # Write the XML Structure to the file
 #	
 	output_file.write("	<" + segment_identifier + ">\r\n")
@@ -449,11 +442,10 @@ def doCOM(line,output_file):
 # Communication Contact
 # 		Communication Address Identifier
 #		Communication Address Code Qualifier
-#	
-	print ("***************************************************************************************************************************************")
+#
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
 #	
@@ -464,12 +456,14 @@ def doCOM(line,output_file):
 	address_identifier				= split_sub[0]
 	address_code_qualifier 			= split_sub[1]
 #	
-# Printing the fields
-#
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Address Identifier  			: " + address_identifier)
-	print ("Address Code Qualifier			: " + address_code_qualifier)
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<CommunicationContact> \r\n")
+	output_file.write("			<CommunicationAddressIdentifier>" + address_identifier + "</CommunicationAddressIdentifier> \r\n")	
+	output_file.write("			<CommunicationAddressCodeQualifier>" + address_code_qualifier + "</CommunicationAddressCodeQualifier> \r\n")	
+	output_file.write("		</CommunicationContact> \r\n")
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 # 
 def doLIN(line,output_file):
@@ -479,11 +473,10 @@ def doLIN(line,output_file):
 # 
 # The Layout of this segment is as follows:
 # Line Item Identifier
-#	
-	print ("***************************************************************************************************************************************")
+#
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
 #	
@@ -491,11 +484,11 @@ def doLIN(line,output_file):
 	segment_identifier				= split_list[0]
 	line_item_identifier 			= split_list[1]
 #	
-# Printing the fields
-#
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Line Item Identifier  			: " + line_item_identifier)
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<LineItemIdentifier>" + line_item_identifier + "</LineItemIdentifier> \r\n")	
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 #
 def doPIA(line,output_file):
@@ -511,14 +504,13 @@ def doPIA(line,output_file):
 #		Item Type ID Code
 #		Code List ID Code
 #		Responsible Agency Code
-#	
-	print ("***************************************************************************************************************************************")
+#
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
-#	
+#		
 	split_list = line.split("+")
 	segment_identifier				= split_list[0]
 	product_identifier				= split_list[1]
@@ -529,15 +521,17 @@ def doPIA(line,output_file):
 	code_list_ID_code 				= split_sub[2]
 	responsible_agency_code			= split_sub[3]
 #	
-# Printing the fields
-#
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Product Identifier 			: " + product_identifier)
-	print ("Item ID 		  		: " + item_ID)
-	print ("Item Type ID Code  	  		: " + item_type_ID_code)
-	print ("Code List ID Code 	  		: " + code_list_ID_code)
-	print ("Responsible Agency Code		  	: " + responsible_agency_code)
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<ProductIdentifier>" + product_identifier + "</ProductIdentifier> \r\n")	
+	output_file.write("		<ItemNumberID> \r\n")
+	output_file.write("			<ItemID>" + item_ID + "</ItemID> \r\n")	
+	output_file.write("			<ItemTypeIDCode>" + item_type_ID_code + "</ItemTypeIDCode> \r\n")	
+	output_file.write("			<CodeListIDCode>" + code_list_ID_code + "</CodeListIDCode> \r\n")	
+	output_file.write("			<ResponsibleAgencyCode>" + responsible_agency_code + "</ResponsibleAgencyCode> \r\n")	
+	output_file.write("		</ItemNumberID> \r\n")
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 # 
 def doIMD(line,output_file):
@@ -553,14 +547,13 @@ def doIMD(line,output_file):
 #		Code List ID Code
 #		Responsible Agency Code
 #		Item Description
-#	
-	print ("***************************************************************************************************************************************")
+#
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
-#	
+#		
 	split_list = line.split("+")
 	segment_identifier				= split_list[0]
 	description_format_code			= split_list[1]
@@ -572,16 +565,18 @@ def doIMD(line,output_file):
 	responsible_agency_code			= split_sub[2] 
 	item_description 				= split_sub[3]
 #	
-# Printing the fields
-#
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Description Format Code			: " + description_format_code)
-	print ("Item Characteristic		 	: " + item_characteristic)
-	print ("Item Description Code  	  		: " + item_description_code)
-	print ("Code List ID Code 	  		: " + code_list_ID_code)
-	print ("Responsible Agency Code		  	: " + responsible_agency_code)
-	print ("Item Description 		  	: " + item_description )
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<DescriptionFormatCode>" + description_format_code + "</DescriptionFormatCode> \r\n")	
+	output_file.write("		<ItemCharacteristic>" + item_characteristic + "</ItemCharacteristic> \r\n")
+	output_file.write("		<ItemDescriptionTL> \r\n")
+	output_file.write("			<ItemDescriptionCode>" + item_description_code + "</ItemDescriptionCode> \r\n")	
+	output_file.write("			<CodeListIDCode>" + code_list_ID_code + "</CodeListIDCode> \r\n")	
+	output_file.write("			<ResponsibleAgencyCode>" + responsible_agency_code + "</ResponsibleAgencyCode> \r\n")	
+	output_file.write("			<ItemDescription>" + item_description  + "</ItemDescription> \r\n")	
+	output_file.write("		</ItemDescriptionTL> \r\n")
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 # 
 def doQTY(line,output_file):
@@ -596,10 +591,9 @@ def doQTY(line,output_file):
 #		Quantity
 #		Measurement Unit Code
 #
-	print ("***************************************************************************************************************************************")
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
 #	
@@ -610,14 +604,16 @@ def doQTY(line,output_file):
 	quantity_type_code_qualifier	= split_sub[0]
 	quantity 		 				= split_sub[1]
 	measurement_unit_code			= split_sub[2] 
-#	
-# Printing the fields
 #
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Quantity Type Code Qualifier		: " + quantity_type_code_qualifier)
-	print ("Quantity	 			: " + quantity)
-	print ("Measurement Unit Code  	  		: " + measurement_unit_code)
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<QuantityDetails> \r\n")
+	output_file.write("			<QuantityTypeCodeQualifier>" + quantity_type_code_qualifier + "</QuantityTypeCodeQualifier> \r\n")	
+	output_file.write("			<Quantity>" + quantity + "</Quantity> \r\n")	
+	output_file.write("			<MeasurementUnitCode>" + measurement_unit_code + "</MeasurementUnitCode> \r\n")	
+	output_file.write("		</QuantityDetails> \r\n")
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 #
 def doUNS(line,output_file):
@@ -627,23 +623,22 @@ def doUNS(line,output_file):
 # 
 # The Layout of this segment is as follows:
 # Section ID
-#	
-	print ("***************************************************************************************************************************************")
+#
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
 #	
 	split_list = line.split("+")
 	segment_identifier				= split_list[0]
 	section_ID			 			= split_list[1]
-#	
-# Printing the fields
 #
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Section ID   				: " + section_ID)
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<SectionID>" + section_ID + "</SectionID> \r\n")	
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 # 
 def doCNT(line,output_file):
@@ -656,26 +651,27 @@ def doCNT(line,output_file):
 #		Control Total Type Code Qualifier
 #		Control Total Value
 #
-	print ("***************************************************************************************************************************************")
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
-#	
+#
 	split_list = line.split("+")
 	segment_identifier					= split_list[0]
 	control 							= split_list[1]
 	split_sub							= control.split(":")
 	control_total_type_code_qualifier	= split_sub[0]
 	control_total_value 		 		= split_sub[1]
-#	
-# Printing the fields
 #
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Control Total Type Code Qualifier	: " + control_total_type_code_qualifier)
-	print ("Control Total Value 			: " + control_total_value )
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<Control> \r\n")
+	output_file.write("			<ControlTotalTypeCodeQualifier>" + control_total_type_code_qualifier + "</ControlTotalTypeCodeQualifier> \r\n")	
+	output_file.write("			<ControlTotalValue>" + control_total_value  + "</ControlTotalValue> \r\n")	
+	output_file.write("		</Control> \r\n")
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 # 
 def doUNT(line,output_file):
@@ -687,10 +683,9 @@ def doUNT(line,output_file):
 # Number of Segments
 # Message Reference Number
 #
-	print ("***************************************************************************************************************************************")
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
 #	
@@ -698,13 +693,13 @@ def doUNT(line,output_file):
 	segment_identifier					= split_list[0]
 	number_of_segments 					= split_list[1]
 	message_reference_number 			= split_list[2]
-#	
-# Printing the fields
 #
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Number of Segments			: " + number_of_segments)
-	print ("Message Reference Number		: " + message_reference_number)
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<NumberofSegments>" + number_of_segments + "</NumberofSegments> \r\n")	
+	output_file.write("		<MessageReferenceNumber>" + message_reference_number   + "</MessageReferenceNumber> \r\n")	
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 #
 def doUNZ(line,output_file):
@@ -716,10 +711,9 @@ def doUNZ(line,output_file):
 # Interchange Control Count
 # Interchange Control Reference
 #
-	print ("***************************************************************************************************************************************")
+# Get rid of the last 2 characters on the line 
+#
 	line = line[:-2]
-	print ("Line 					: " + line)
-	print ("***************************************************************************************************************************************")
 #	
 # Splitting the fields
 #	
@@ -727,13 +721,13 @@ def doUNZ(line,output_file):
 	segment_identifier					= split_list[0]
 	interchange_control_count 			= split_list[1]
 	interchange_control_reference		= split_list[2]
-#	
-# Printing the fields
 #
-	print ("Segment Identifier 			: " + segment_identifier)
-	print ("Interchange Control Count		: " + interchange_control_count)
-	print ("Interchange Control Reference		: " + interchange_control_reference)
-	print(" ")
+# Write the XML Structure to the file
+#	
+	output_file.write("	<" + segment_identifier + ">\r\n")
+	output_file.write("		<InterchangeControlCount>" + interchange_control_count + "</InterchangeControlCount> \r\n")	
+	output_file.write("		<InterchangeControlReference>" + interchange_control_reference  + "</InterchangeControlReference> \r\n")	
+	output_file.write("	</" + segment_identifier + ">\r\n")
 	return;
 #
 
