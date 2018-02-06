@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ORDER>
+	<UNB>
+		<SyntaxIdentifier> 
+			<SyntaxID>UNOC</SyntaxID> 
+			<SyntaxVersionNumber>3</SyntaxVersionNumber> 
+		</SyntaxIdentifier> 
+		<InterchangeSender> 
+			<SenderID>0041498000042</SenderID> 
+			<PartnerIDCode>14</PartnerIDCode> 
+		</InterchangeSender> 
+		<InterchangeRecipient> 
+			<RecipientID>5412345678908</RecipientID> 
+			<RecipientIDCode>14</RecipientIDCode> 
+		</InterchangeRecipient> 
+		<PreparationDateTime> 
+			<PreparationDate>150323</PreparationDate> 
+			<PreparationTime>1715</PreparationTime> 
+		</PreparationDateTime> 
+		<InterchangeControlReference>12345552</InterchangeControlReference> 
+		<RecipientReferencePassword></RecipientReferencePassword> 
+		<ApplicationReference></ApplicationReference> 
+		<ProcessingPriorityCode></ProcessingPriorityCode> 
+		<AcknowledgementRequest></AcknowledgementRequest> 
+		<CommunicationsAgreementID>EANCOM</CommunicationsAgreementID> 
+		<TestIndicator>1</TestIndicator> 
+	</UNB>
+	<UNH>
+		<MessageReferenceNumber>54322</MessageReferenceNumber> 
+		<MessageIdentifier> 
+			<MessageType>ORDERS</MessageType> 
+			<MessageVersionNumber>D</MessageVersionNumber> 
+			<MessageReleaseNumber>01B</MessageReleaseNumber> 
+			<ControllingAgency>UN</ControllingAgency> 
+			<AssociationAssignedCode>EAN010</AssociationAssignedCode> 
+		</MessageIdentifier> 
+	</UNH>
+	<BGM>
+		<DocumentMessageName> 
+			<DocumentNameCode>220</DocumentNameCode> 
+			<CodeListID></CodeListID> 
+			<ResponsibleAgencyCode>9</ResponsibleAgencyCode> 
+			<DocumentName>DELIVERY</DocumentName> 
+		</DocumentMessageName> 
+		<DocumentIdentifier>59661</DocumentIdentifier> 
+		<MessageFunctionCode>9</MessageFunctionCode> 
+	</BGM>
+	<DTM>
+		<DateTimePeriod> 
+			<PeriodFunctionCodeQualifier>137</PeriodFunctionCodeQualifier> 
+			<PeriodValue>201503231130</PeriodValue> 
+			<PeriodFormatCode>203</PeriodFormatCode> 
+		</DateTimePeriod> 
+	</DTM>
+	<DTM>
+		<DateTimePeriod> 
+			<PeriodFunctionCodeQualifier>2</PeriodFunctionCodeQualifier> 
+			<PeriodValue>201503251130</PeriodValue> 
+			<PeriodFormatCode>203</PeriodFormatCode> 
+		</DateTimePeriod> 
+	</DTM>
+	<FTX>
+		<TextSubjectCodeQualifier>PUR</TextSubjectCodeQualifier> 
+		<FreeTextFunctionCode></FreeTextFunctionCode> 
+		<TextReference></TextReference> 
+		<TextLiteral>ORDER NOTES</TextLiteral> 
+	</FTX>
+	<RFF>
+		<Reference> 
+			<ReferenceCodeQualifier>SZ</ReferenceCodeQualifier> 
+			<ReferenceIdentifier>NNN-00042/59665</ReferenceIdentifier> 
+		</Reference> 
+	</RFF>
+	<DTM>
+		<DateTimePeriod> 
+			<PeriodFunctionCodeQualifier>171</PeriodFunctionCodeQualifier> 
+			<PeriodValue>201411281130</PeriodValue> 
+			<PeriodFormatCode>203</PeriodFormatCode> 
+		</DateTimePeriod> 
+	</DTM>
+	<NAD>
+		<PartyFunctionCodeQualifier>BY</PartyFunctionCodeQualifier> 
+		<PartyIdentificationDetails> 
+			<PartyIdentifier>4399902114486</PartyIdentifier> 
+			<CodeListIDCode></CodeListIDCode> 
+			<ResponsibleAgencyCode>9</ResponsibleAgencyCode> 
+		</PartyIdentificationDetails> 
+		<NameAndAddress></NameAndAddress> 
+		<PartyName>ALDI REGION</PartyName> 
+		<Street>ALDI STREET 1</Street> 
+		<CityName>ALDI CITY</CityName> 
+		<CountrySubEntityNameCode>NRW</CountrySubEntityNameCode> 
+		<PostalIDCode>46045</PostalIDCode> 
+		<CountryNameCode>DE</CountryNameCode> 
+	</NAD>
+	<CTA>
+		<ContactFunctionCode>PD</ContactFunctionCode> 
+		<ContactDetails> 
+			<ContactNameCode></ContactNameCode> 
+			<ContactName>MR. SMITH</ContactName> 
+		</ContactDetails> 
+	</CTA>
+	<NAD>
+		<PartyFunctionCodeQualifier>SU</PartyFunctionCodeQualifier> 
+		<PartyIdentificationDetails> 
+			<PartyIdentifier>5412345678908</PartyIdentifier> 
+			<CodeListIDCode></CodeListIDCode> 
+			<ResponsibleAgencyCode>9</ResponsibleAgencyCode> 
+		</PartyIdentificationDetails> 
+		<NameAndAddress></NameAndAddress> 
+		<PartyName>SUPPLIER</PartyName> 
+		<Street>SUPPLIER STREET 1</Street> 
+		<CityName>SUPPLIER CITY</CityName> 
+		<CountrySubEntityNameCode>NRW</CountrySubEntityNameCode> 
+		<PostalIDCode>46047</PostalIDCode> 
+		<CountryNameCode>DE</CountryNameCode> 
+	</NAD>
+	<RFF>
+		<Reference> 
+			<ReferenceCodeQualifier>YC1</ReferenceCodeQualifier> 
+			<ReferenceIdentifier>12345</ReferenceIdentifier> 
+		</Reference> 
+	</RFF>
+	<NAD>
+		<PartyFunctionCodeQualifier>HP</PartyFunctionCodeQualifier> 
+		<PartyIdentificationDetails> 
+			<PartyIdentifier>5412345678908</PartyIdentifier> 
+			<CodeListIDCode></CodeListIDCode> 
+			<ResponsibleAgencyCode>9</ResponsibleAgencyCode> 
+		</PartyIdentificationDetails> 
+		<NameAndAddress></NameAndAddress> 
+		<PartyName>MESSAGE RECIPIENT</PartyName> 
+		<Street>RECIPIENT STREET 1</Street> 
+		<CityName>RECIPIENT CITY</CityName> 
+		<CountrySubEntityNameCode></CountrySubEntityNameCode> 
+		<PostalIDCode>46049</PostalIDCode> 
+		<CountryNameCode>DE</CountryNameCode> 
+	</NAD>
+	<NAD>
+		<PartyFunctionCodeQualifier>DP</PartyFunctionCodeQualifier> 
+		<PartyIdentificationDetails> 
+			<PartyIdentifier>4399902114486</PartyIdentifier> 
+			<CodeListIDCode></CodeListIDCode> 
+			<ResponsibleAgencyCode>9</ResponsibleAgencyCode> 
+		</PartyIdentificationDetails> 
+		<NameAndAddress></NameAndAddress> 
+		<PartyName>ALDI WAREHOUSE</PartyName> 
+		<Street>ALDI STREET 1</Street> 
+		<CityName>ALDI CITY</CityName> 
+		<CountrySubEntityNameCode></CountrySubEntityNameCode> 
+		<PostalIDCode>46045</PostalIDCode> 
+		<CountryNameCode>DE</CountryNameCode> 
+	</NAD>
+	<FTX>
+		<TextSubjectCodeQualifier>PKG</TextSubjectCodeQualifier> 
+		<FreeTextFunctionCode></FreeTextFunctionCode> 
+		<TextReference></TextReference> 
+		<TextLiteral>Europalette</TextLiteral> 
+	</FTX>
+</ORDER>
